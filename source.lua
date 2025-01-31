@@ -24,7 +24,7 @@ local function cretate_button(asd)
 	button.TextTransparency=1
 	button.Text=""
 	button.Parent=asd
-	button.ZIndex=5000
+	button.ZIndex=5000A
 	return button
 end
 
@@ -67,7 +67,7 @@ end
 local function GetImageData(name:string,image:ImageLabel)
 	name = name or "ADS"
 	name = name:lower()
-	local NigImage = "rbxassetid://3926305904"
+	local NigImage = ""
 	if name == "ads" then
 		image.Image = NigImage
 		image.ImageRectOffset = Vector2.new(205,565)
@@ -105,11 +105,11 @@ local function GetImageData(name:string,image:ImageLabel)
 	end
 
 	if name == "mouse" then
-		image.Image = "rbxassetid://3515393063"
+		image.Image = ""
 	end
 
 	if name == "user" then
-		image.Image = "rbxassetid://10494577250"
+		image.Image = ""
 	end
 end
 
@@ -361,7 +361,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
 		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton.ZIndex = 4
-		ImageButton.Image = "rbxassetid://10002398990"
+		ImageButton.Image = ""
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
@@ -474,7 +474,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
 	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
 	DropShadow.ZIndex = 3
-	DropShadow.Image = "rbxassetid://6014261993"
+	DropShadow.Image = ""
 	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	DropShadow.ImageTransparency = 0.860
 	DropShadow.ScaleType = Enum.ScaleType.Slice
@@ -1898,6 +1898,28 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 						TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
 					end)
 
+					local function createDropdownButton(text)
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(1, 0, 0, 30)
+    button.Text = text
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.TextScaled = true
+    button.BackgroundTransparency = 1
+    button.Font = Enum.Font.SourceSans
+    button.TextSize = 14
+    button.MouseButton1Click:Connect(function()
+        callback(text)
+        ValueText.Text = text
+        DropdownToggle = not DropdownToggle
+        DropdownToggleEffect(DropdownToggle)
+    end)
+    button.Parent = DownBar
+end
+
+					function sectionfunc:AddItem(itemName)
+    createDropdownButton(itemName)
+end
+
 					return Dropdown
 				end
 
@@ -2038,7 +2060,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				ColorWheel.Position = UDim2.new(0.0500000007, 0, 0.0500000007, 0)
 				ColorWheel.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
 				ColorWheel.ZIndex = 16
-				ColorWheel.Image = "rbxassetid://6020299385"
+				ColorWheel.Image = ""
 
 				UICorner_4.CornerRadius = UDim.new(1, 0)
 				UICorner_4.Parent = ColorWheel
@@ -2050,7 +2072,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				Darkness.Position = UDim2.new(0.949999988, 0, 0.0500000007, 0)
 				Darkness.Size = UDim2.new(0.150000006, 0, 0.600000024, 0)
 				Darkness.ZIndex = 16
-				Darkness.Image = "rbxassetid://359311684"
+				Darkness.Image = ""
 
 				UIGradient.Color = ColorSequence.new{
 					ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
@@ -2589,7 +2611,7 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = "rbxassetid://9127564477"
+		CloseButton.Image = ""
 		CloseButton.ScaleType = Enum.ScaleType.Fit
 		CloseButton.ImageTransparency=1
 		
