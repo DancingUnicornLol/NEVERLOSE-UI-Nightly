@@ -1,8 +1,8 @@
 --[[	
 
 	|	NEVERLOSE	UI	|
-	Fuck Synapse X (real)
-		THIS UI MAKE BY CAT_SUS, remake by alriceee on discord		
+	Fuck Synapse X
+		THIS UI MAKE BY CAT_SUS		
 		original Neverlose
 		
 		[https://neverlose.cc/] - csgo cheat
@@ -24,7 +24,7 @@ local function cretate_button(asd)
 	button.TextTransparency=1
 	button.Text=""
 	button.Parent=asd
-	button.ZIndex=5000A
+	button.ZIndex=5000
 	return button
 end
 
@@ -127,36 +127,10 @@ local NEVERLOSE = {
 		ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	},
 	_Version="10.C",
-	_Name="NEVERLOSE",
-	_ActiveWindow = nil,
-	_ActiveGUI = nil,
-	
-	-- Destroy method
-	Destroy = function(self)
-		if self._ActiveWindow then
-			pcall(function()
-				self._ActiveWindow:Destroy()
-			end)
-			self._ActiveWindow = nil
-		end
-		
-		if self._ActiveGUI then
-			pcall(function()
-				self._ActiveGUI:Destroy()
-			end)
-			self._ActiveGUI = nil
-		end
-		
-		-- Clean up any existing UI elements in CoreGui
-		for _, gui in pairs(game:GetService("CoreGui"):GetChildren()) do
-			if gui.Name == "NEVERLOSE_UI" then
-				gui:Destroy()
-			end
-		end
-	end
+	_Name="NEVERLOSE"
 }
 
-print(NEVERLOSE._Name..":",NEVERLOSE._Version..':',[[https://neverlose.cc/]],": UI BY CAT_SUS, remake by alriceee on discord","__ui")
+print(NEVERLOSE._Name..":",NEVERLOSE._Version..':',[[Inspired By: https://neverlose.cc/]],": UI BY 3345-C-A-T-S-U-S","__ui")
 
 function NEVERLOSE:Theme(name)
 	name = tostring(name or "original"):lower()
@@ -195,54 +169,15 @@ function NEVERLOSE:Theme(name)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(28, 28, 28)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(13, 13, 13)
 	end
-
-	if name == "light" then
-        NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(240, 240, 240)
-        NEVERLOSE.Themes.BlackColor = Color3.fromRGB(255, 255, 255)
-        NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(230, 230, 230)
-        NEVERLOSE.Themes.TraceColor = Color3.fromRGB(200, 200, 200)
-        NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 120, 215)
-        NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(220, 220, 220)
-        NEVERLOSE.Themes.SectionColor = Color3.fromRGB(250, 250, 250)
-        NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(180, 180, 180)
-        NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(245, 245, 245)
-    end
 end
 
 function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
-	-- Clean up existing UI elements
-	if self._ActiveGUI then
-		pcall(function()
-			self._ActiveGUI:Destroy()
-		end)
-		self._ActiveGUI = nil
-	end
-	
-	-- Clean up existing window
-	if self._ActiveWindow then
-		pcall(function()
-			self._ActiveWindow:Destroy()
-		end)
-		self._ActiveWindow = nil
-	end
-	
-	-- Clean up any existing UI elements in CoreGui
-	for _, gui in pairs(CoreGui:GetChildren()) do
-		if gui.Name == "NEVERLOSE_UI" then
-			gui:Destroy()
-		end
-	end
-
 	local WindowFunctinos={}
 	local ToggleUI=false
 	local ooldsize=UICustomSize or UDim2.new(0.200000003, 210, 0.200000003, 175)
 	local Tabs={}
 
 	local ScreenGui = Instance.new("ScreenGui")
-	ScreenGui.Name = "NEVERLOSE_UI"
-	-- Store reference to active GUI
-	self._ActiveGUI = ScreenGui
-	
 	local Frame = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local Frame_2 = Instance.new("Frame")
@@ -267,14 +202,14 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local UserName = Instance.new("TextLabel")
 	local headd2text
 	local oldPositionClose
-	
+
 	--Anti Spoofer
 	ScreenGui:GetPropertyChangedSignal('Enabled'):Connect(function()
 		if not ScreenGui.Enabled then
 			ScreenGui.Enabled=true
 		end
 	end)
-	
+
 	task.spawn(function()
 		if Text then
 			local TextLabel = Instance.new("TextLabel")
@@ -361,7 +296,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
 		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton.ZIndex = 4
-		ImageButton.Image = ""
+		ImageButton.Image = "rbxassetid://10002398990"
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
@@ -474,7 +409,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
 	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
 	DropShadow.ZIndex = 3
-	DropShadow.Image = ""
+	DropShadow.Image = "rbxassetid://6014261993"
 	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	DropShadow.ImageTransparency = 0.860
 	DropShadow.ScaleType = Enum.ScaleType.Slice
@@ -617,41 +552,6 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	UserName.TextSize = 14.000
 	UserName.TextWrapped = true
 	UserName.TextXAlignment = Enum.TextXAlignment.Left
-
-	-- Add system clock
-	local SystemClock = Instance.new("TextLabel")
-	SystemClock.Name = "SystemClock"
-	SystemClock.Parent = Frame
-	SystemClock.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	SystemClock.BackgroundTransparency = 1.000
-	SystemClock.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	SystemClock.BorderSizePixel = 0
-	SystemClock.Position = UDim2.new(0.75, 0, 0.95, 0)
-	SystemClock.Size = UDim2.new(0.2, 0, 0.05, 0)
-	SystemClock.ZIndex = 5
-	SystemClock.Font = Enum.Font.SourceSansBold
-	SystemClock.Text = "00:00:00"
-	SystemClock.TextColor3 = Color3.fromRGB(255, 255, 255)
-	SystemClock.TextScaled = true
-	SystemClock.TextSize = 14.000
-	SystemClock.TextWrapped = true
-
-	-- Update clock function
-	local function updateClock()
-		local date = os.date("*t")
-		local hour = string.format("%02d", date.hour)
-		local min = string.format("%02d", date.min)
-		local sec = string.format("%02d", date.sec)
-		SystemClock.Text = hour .. ":" .. min .. ":" .. sec
-	end
-
-	-- Update clock every second
-	spawn(function()
-		while true do
-			updateClock()
-			wait(1)
-		end
-	end)
 
 	function WindowFunctinos:AddTabLabel(Label)
 		local TabTitle = Instance.new("TextLabel")
@@ -1269,12 +1169,15 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 
 			end
 
-			function sectionfunc:AddKeybind(KeybindNameString, Default, callback)
-				callback = callback or function() end
+			function sectionfunc:AddKeybind(KeybindNameString,Default,callback)
+				callback=callback or function()
 
-				local function gt(a)
+				end
+
+				local function gt(a:Enum.KeyCode)
 					if not a then
 						return "None"
+
 					else
 						return a.Name
 					end
@@ -1323,12 +1226,10 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				LabelText.TextSize = 14.000
 				LabelText.TextWrapped = true
 				LabelText.TextXAlignment = Enum.TextXAlignment.Left
-				LabelText.TextTransparency = .3
-
+				LabelText.TextTransparency=.3
 				BrindText.Name = "BrindText"
 				BrindText.Parent = Keybind
 				BrindText.AnchorPoint = Vector2.new(1, 0.5)
-				
 				BrindText.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
 				BrindText.BackgroundTransparency = 0.500
 				BrindText.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -1363,63 +1264,40 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 				ValueText.TextWrapped = true
 
 				local function UpdateText()
-					local size = TextService:GetTextSize(ValueText.Text, ValueText.TextSize, ValueText.Font, Vector2.new(math.huge, math.huge))
-					TweenService:Create(BrindText, TweenInfo.new(0.2), {Size = UDim2.new(0, size.X + 1, 0.550000012, 0)}):Play()
-				end
+					local size = TextService:GetTextSize(ValueText.Text,ValueText.TextSize,ValueText.Font,Vector2.new(math.huge,math.huge))
 
-				-- Add input detection for the keybind
-				local function HandleInput(input)
-					if not Default then return end
-					
-					if input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Default then
-						callback(Default)
-					end
+					TweenService:Create(BrindText,TweenInfo.new(0.2),{Size = UDim2.new(0, size.X + 1, 0.550000012, 0)}):Play()
 				end
-
-				-- Connect the input handler
-				InputService.InputBegan:Connect(HandleInput)
 
 				local Binding = false
 				cretate_button(Keybind).MouseButton1Click:Connect(function()
-					if Binding then return end
+					if Binding then
+						return
+					end
+					Binding =  true
 
-					Binding = true
 					local targetloadded = nil
 
-					local hook = InputService.InputBegan:Connect(function(input)
-						if input.UserInputType == Enum.UserInputType.Keyboard then
-							if input.KeyCode ~= Enum.KeyCode.Unknown and 
-							   input.KeyCode ~= Enum.KeyCode.Escape then
-								targetloadded = input.KeyCode
-							elseif input.KeyCode == Enum.KeyCode.Escape then
-								targetloadded = nil
-							end
+					local hook = InputService.InputBegan:Connect(function(is)
+						if is.KeyCode ~= Enum.KeyCode.Unknown then
+							targetloadded = is.KeyCode
 						end
 					end)
-
-					TweenService:Create(LabelText, TweenInfo.new(0.3), {TextTransparency = 0}):Play()
+					TweenService:Create(LabelText,TweenInfo.new(0.3),{TextTransparency=0}):Play()
 					ValueText.Text = "..."
-					repeat 
-						task.wait() 
-						UpdateText() 
-					until targetloadded ~= nil or not Binding
-
-					TweenService:Create(LabelText, TweenInfo.new(0.3), {TextTransparency = 0.3}):Play()
-					Binding = false
-
+					repeat task.wait() UpdateText() until targetloadded or not Binding
+					TweenService:Create(LabelText,TweenInfo.new(0.3),{TextTransparency=0.3}):Play()
+					Binding =false
 					if hook then
 						hook:Disconnect()
 					end
-
 					if targetloadded then
 						ValueText.Text = gt(targetloadded)
 						Default = targetloadded
-						UpdateText()
+						UpdateText() 
 						callback(targetloadded)
-					else
-						ValueText.Text = gt(Default)
-						UpdateText()
 					end
+					return
 				end)
 
 				UpdateText()
@@ -1898,28 +1776,6 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 						TweenService:Create(Dropdown,TweenInfo.new(0.1),{TextTransparency=0.3}):Play()
 					end)
 
-					local function createDropdownButton(text)
-    local button = Instance.new("TextButton")
-    button.Size = UDim2.new(1, 0, 0, 30)
-    button.Text = text
-    button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    button.TextScaled = true
-    button.BackgroundTransparency = 1
-    button.Font = Enum.Font.SourceSans
-    button.TextSize = 14
-    button.MouseButton1Click:Connect(function()
-        callback(text)
-        ValueText.Text = text
-        DropdownToggle = not DropdownToggle
-        DropdownToggleEffect(DropdownToggle)
-    end)
-    button.Parent = DownBar
-end
-
-					function sectionfunc:AddItem(itemName)
-    createDropdownButton(itemName)
-end
-
 					return Dropdown
 				end
 
@@ -1981,215 +1837,6 @@ end
 				TweenService:Create(UIStroke,TweenInfo.new(1),{Transparency=0}):Play()
 			end
 
-			function sectionfunc:AddColorPicker(Text, default, callback)
-				default = default or Color3.fromRGB(255, 255, 255)
-				callback = callback or function() end
-
-				local ColorPicker = Instance.new("Frame")
-				local UICorner = Instance.new("UICorner")
-				local Title = Instance.new("TextLabel")
-				local ColorDisplay = Instance.new("Frame")
-				local UICorner_2 = Instance.new("UICorner")
-				local UIStroke = Instance.new("UIStroke")
-				local ColorPickerFrame = Instance.new("Frame")
-				local UICorner_3 = Instance.new("UICorner")
-				local ColorWheel = Instance.new("ImageButton")
-				local UICorner_4 = Instance.new("UICorner")
-				local UIStroke_2 = Instance.new("UIStroke")
-				local Darkness = Instance.new("ImageButton")
-				local UIGradient = Instance.new("UIGradient")
-				local UICorner_5 = Instance.new("UICorner")
-				local UIStroke_3 = Instance.new("UIStroke")
-				local ColorPreview = Instance.new("Frame")
-				local UICorner_6 = Instance.new("UICorner")
-
-				ColorPicker.Name = "ColorPicker"
-				ColorPicker.Parent = Section
-				ColorPicker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				ColorPicker.BackgroundTransparency = 1
-				ColorPicker.Size = UDim2.new(0.899999976, 0, 0.0799999991, 0) -- Made taller
-				ColorPicker.ZIndex = 5
-
-				UICorner.CornerRadius = UDim.new(0, 3)
-				UICorner.Parent = ColorPicker
-
-				
-				Title.Name = "Title"
-				Title.Parent = ColorPicker
-				Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				Title.BackgroundTransparency = 1
-				Title.Position = UDim2.new(0, 5, 0, 0)
-				Title.Size = UDim2.new(0.75, 0, 1, 0)
-				Title.ZIndex = 5
-				Title.Font = Enum.Font.SourceSansSemibold
-				Title.Text = Text
-				Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Title.TextSize = 14
-				Title.TextXAlignment = Enum.TextXAlignment.Left
-
-				ColorDisplay.Name = "ColorDisplay"
-				ColorDisplay.Parent = ColorPicker
-				ColorDisplay.AnchorPoint = Vector2.new(1, 0.5)
-				ColorDisplay.BackgroundColor3 = default
-				ColorDisplay.Position = UDim2.new(1, -5, 0.5, 0)
-				ColorDisplay.Size = UDim2.new(0.15, 0, 0.8, 0)
-				ColorDisplay.ZIndex = 5
-
-				UICorner_2.CornerRadius = UDim.new(0, 3)
-				UICorner_2.Parent = ColorDisplay
-
-				UIStroke.Color = NEVERLOSE.Themes.StrokeColor
-				UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-				UIStroke.Parent = ColorDisplay
-
-				ColorPickerFrame.Name = "ColorPickerFrame"
-				ColorPickerFrame.Parent = ColorPicker
-				ColorPickerFrame.BackgroundColor3 = NEVERLOSE.Themes.SectionColor
-				ColorPickerFrame.Position = UDim2.new(1.1, 0, 0, 0)
-				ColorPickerFrame.Size = UDim2.new(0, 200, 0, 200)
-				ColorPickerFrame.ZIndex = 15
-				ColorPickerFrame.Visible = false
-
-				UICorner_3.CornerRadius = UDim.new(0, 3)
-				UICorner_3.Parent = ColorPickerFrame
-
-				ColorWheel.Name = "ColorWheel"
-				ColorWheel.Parent = ColorPickerFrame
-				ColorWheel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				ColorWheel.BackgroundTransparency = 1
-				ColorWheel.Position = UDim2.new(0.0500000007, 0, 0.0500000007, 0)
-				ColorWheel.Size = UDim2.new(0.600000024, 0, 0.600000024, 0)
-				ColorWheel.ZIndex = 16
-				ColorWheel.Image = ""
-
-				UICorner_4.CornerRadius = UDim.new(1, 0)
-				UICorner_4.Parent = ColorWheel
-
-				Darkness.Name = "Darkness"
-				Darkness.Parent = ColorPickerFrame
-				Darkness.AnchorPoint = Vector2.new(1, 0)
-				Darkness.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				Darkness.Position = UDim2.new(0.949999988, 0, 0.0500000007, 0)
-				Darkness.Size = UDim2.new(0.150000006, 0, 0.600000024, 0)
-				Darkness.ZIndex = 16
-				Darkness.Image = ""
-
-				UIGradient.Color = ColorSequence.new{
-					ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
-					ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))
-				}
-				UIGradient.Rotation = 90
-				UIGradient.Parent = Darkness
-
-				UICorner_5.CornerRadius = UDim.new(0, 3)
-				UICorner_5.Parent = Darkness
-
-				ColorPreview.Name = "ColorPreview"
-				ColorPreview.Parent = ColorPickerFrame
-				ColorPreview.BackgroundColor3 = default
-				ColorPreview.Position = UDim2.new(0.0500000007, 0, 0.699999988, 0)
-				ColorPreview.Size = UDim2.new(0.899999976, 0, 0.25, 0)
-				ColorPreview.ZIndex = 16
-
-				UICorner_6.CornerRadius = UDim.new(0, 3)
-				UICorner_6.Parent = ColorPreview
-
-				local function updateColor()
-					local hue, saturation = 0, 0
-					local isHolding = false
-					local isDarknessHolding = false
-					local darkness = 0
-
-					local function updateHueSaturation(input)
-						local center = ColorWheel.AbsolutePosition + ColorWheel.AbsoluteSize/2
-						local radius = ColorWheel.AbsoluteSize.X/2
-						local delta = Vector2.new(input.Position.X - center.X, input.Position.Y - center.Y)
-						local distance = delta.Magnitude
-						
-						if distance <= radius then
-							local angle = math.atan2(delta.Y, delta.X)
-							hue = (angle / (math.pi * 2)) + 0.5
-							if hue < 0 then hue += 1 end
-							saturation = math.clamp(distance/radius, 0, 1)
-							return true
-						end
-						return false
-					end
-
-					local function updateDarkness(input)
-						local relative = input.Position.Y - Darkness.AbsolutePosition.Y
-						darkness = math.clamp(relative/Darkness.AbsoluteSize.Y, 0, 1)
-						return true
-					end
-
-					local function updateFinal()
-						local color = Color3.fromHSV(hue, saturation, 1-darkness)
-						ColorDisplay.BackgroundColor3 = color
-						ColorPreview.BackgroundColor3 = color
-						callback(color)
-					end
-
-					ColorWheel.MouseButton1Down:Connect(function()
-						isHolding = true
-					end)
-
-					ColorWheel.MouseButton1Up:Connect(function()
-						isHolding = false
-					end)
-
-					Darkness.MouseButton1Down:Connect(function()
-						isDarknessHolding = true
-					end)
-
-					Darkness.MouseButton1Up:Connect(function()
-						isDarknessHolding = false
-					end)
-
-					InputService.InputChanged:Connect(function(input)
-						if input.UserInputType == Enum.UserInputType.MouseMovement then
-							if isHolding then
-								if updateHueSaturation(input) then
-									updateFinal()
-								end
-							end
-							if isDarknessHolding then
-								if updateDarkness(input) then
-									updateFinal()
-								end
-							end
-						end
-					end)
-
-					game:GetService("UserInputService").InputEnded:Connect(function(input)
-						if input.UserInputType == Enum.UserInputType.MouseButton1 then
-							isHolding = false
-							isDarknessHolding = false
-						end
-					end)
-				end
-
-				local colorPickerOpen = false
-				ColorDisplay.InputBegan:Connect(function(input)
-					if input.UserInputType == Enum.UserInputType.MouseButton1 then
-						colorPickerOpen = not colorPickerOpen
-						ColorPickerFrame.Visible = colorPickerOpen
-					end
-				end)
-
-				updateColor()
-				update_section_size()
-
-				local funcs = {}
-				
-				function funcs:Set(color)
-					ColorDisplay.BackgroundColor3 = color
-					ColorPreview.BackgroundColor3 = color
-					callback(color)
-				end
-
-				return funcs
-			end
-
 			return sectionfunc
 		end
 
@@ -2198,9 +1845,7 @@ end
 	end
 
 	function WindowFunctinos:Delete()
-		if NEVERLOSE then
-			NEVERLOSE:Destroy()
-		end
+		return ScreenGui:Destroy()
 	end
 
 	local dragToggle = nil
@@ -2235,9 +1880,6 @@ end
 			end
 		end
 	end)
-
-	-- Store reference to current window
-	self._ActiveWindow = ScreenGui
 
 	return WindowFunctinos
 end
@@ -2611,10 +2253,10 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = ""
+		CloseButton.Image = "rbxassetid://9127564477"
 		CloseButton.ScaleType = Enum.ScaleType.Fit
 		CloseButton.ImageTransparency=1
-		
+
 		local currenttime = 0.3
 		local function start_vu()
 			TweenService:Create(Notify,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quint),{Size=UDim2.new(0.99,0,0.75,0)}):Play()
@@ -2679,20 +2321,5 @@ task.spawn(function()
 		end)
 	end
 end)
-
--- Add reload function
-function NEVERLOSE:ReloadUI()
-	if self._ActiveWindow then
-		local oldWindow = self._ActiveWindow
-		local properties = {
-			NameScriptHub = oldWindow:FindFirstChild("HeadName") and oldWindow.HeadName.Text,
-			Text = oldWindow:FindFirstChild("headd2text") and oldWindow.headd2text.Text,
-			Size = oldWindow:FindFirstChild("Frame") and oldWindow.Frame.Size
-		}
-		
-		-- Recreate window with same properties
-		self:AddWindow(properties.NameScriptHub, properties.Text, properties.Size)
-	end
-end
 
 return NEVERLOSE
