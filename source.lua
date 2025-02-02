@@ -7,13 +7,13 @@
 		
 		[https://neverlose.cc/] - csgo cheat
 ]]
-local cloneref = cloneref or function(...) return ... end
+
 local LocalPlayer = game:GetService('Players').LocalPlayer;
-local Mouse = cloneref(LocalPlayer:GetMouse());
+local Mouse = LocalPlayer:GetMouse();
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
-local CoreGui = (gethui and gethui()) or game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
+local CoreGui = game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
@@ -2261,65 +2261,4 @@ function NEVERLOSE:Notification()
 		local function start_vu()
 			TweenService:Create(Notify,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quint),{Size=UDim2.new(0.99,0,0.75,0)}):Play()
 			TweenService:Create(UIStroke,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{Transparency=0}):Play()
-			TweenService:Create(HeadTitle,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{TextTransparency=0}):Play()
-			TweenService:Create(BodyTitle,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{TextTransparency=0.3}):Play()
-			TweenService:Create(Countdown,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{BackgroundTransparency=0}):Play()
-			TweenService:Create(IconImage,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{ImageTransparency=0}):Play()
-			TweenService:Create(CloseButton,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{ImageTransparency=0}):Play()
-		end
-
-
-		local function end_vu()
-			local trantween = TweenService:Create(Notify,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{Size=UDim2.new(0.75,0,0,0)})
-			TweenService:Create(UIStroke,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quad),{Transparency=1}):Play()
-			TweenService:Create(HeadTitle,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quad),{TextTransparency=1}):Play()
-			TweenService:Create(BodyTitle,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quad),{TextTransparency=1}):Play()
-			TweenService:Create(Countdown,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quad),{BackgroundTransparency=1}):Play()
-			TweenService:Create(IconImage,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quad),{ImageTransparency=1}):Play()
-			TweenService:Create(CloseButton,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quad),{ImageTransparency=1}):Play()
-			trantween:Play()
-
-			trantween.Completed:Connect(function()
-				Notify:Destroy()
-			end)
-		end
-
-		start_vu()
-
-		task.spawn(function()
-			CloseButton.MouseButton1Click:Connect(end_vu)
-
-			if countdown then
-
-				pcall(function()
-					task.wait(1.3)
-					local tween = TweenService:Create(Countdown,TweenInfo.new(tonumber(countdown) or 3,Enum.EasingStyle.Linear),{Size=UDim2.new(1,0,0.1,0)
-					})
-
-					tween:Play()
-
-					tween.Completed:Wait()
-					task.wait(0.5)
-					end_vu()
-				end)
-			end
-		end)
-	end
-
-	return Notification_
-end
-
-task.spawn(function()
-	_G.index_neverlose=true
-	while _G.index_neverlose do task.wait(0)
-		pcall(function()
-			for i,v in ipairs(NEVERLOSE.auto_function) do task.wait()
-				pcall(function()
-					task.spawn(v)
-				end)
-			end
-		end)
-	end
-end)
-
-return NEVERLOSE
+			TweenService:Create(HeadTitle,TweenInfo.new(currenttime,Enum.EasingStyle.Quint,Enum.EasingDirection.In),{T
