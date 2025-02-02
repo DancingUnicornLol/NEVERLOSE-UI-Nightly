@@ -14,7 +14,7 @@ local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
 local CoreGui = (gethui and gethui()) or game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
-as
+
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
 local function cretate_button(asd)
@@ -67,7 +67,7 @@ end
 local function GetImageData(name:string,image:ImageLabel)
 	name = name or "ADS"
 	name = name:lower()
-	local NigImage = ""
+	local NigImage = "rbxassetid://3926305904"
 	if name == "ads" then
 		image.Image = NigImage
 		image.ImageRectOffset = Vector2.new(205,565)
@@ -105,11 +105,11 @@ local function GetImageData(name:string,image:ImageLabel)
 	end
 
 	if name == "mouse" then
-		image.Image = ""
+		image.Image = "rbxassetid://3515393063"
 	end
 
 	if name == "user" then
-		image.Image = ""
+		image.Image = "rbxassetid://10494577250"
 	end
 end
 
