@@ -2253,7 +2253,7 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = "❌"
+		CloseButton.Image = "rbxassetid://9127564477"
 		CloseButton.ScaleType = Enum.ScaleType.Fit
 		CloseButton.ImageTransparency=1
 
