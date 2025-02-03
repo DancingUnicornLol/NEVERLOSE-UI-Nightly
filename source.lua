@@ -67,7 +67,7 @@ end
 local function GetImageData(name:string,image:ImageLabel)
 	name = name or "ADS"
 	name = name:lower()
-	local NigImage = "rbxassetid://10264594285"
+	local NigImage = "🌐"
 	if name == "ads" then
 		image.Image = NigImage
 		image.ImageRectOffset = Vector2.new(205,565)
@@ -105,11 +105,11 @@ local function GetImageData(name:string,image:ImageLabel)
 	end
 
 	if name == "mouse" then
-		image.Image = "rbxassetid://10264594285"
+		image.Image = "🌐"
 	end
 
 	if name == "user" then
-		image.Image = "rbxassetid://10264594285"
+		image.Image = "🌐"
 	end
 end
 
@@ -296,7 +296,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
 		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton.ZIndex = 4
-		ImageButton.Image = "rbxassetid://10264594285"
+		ImageButton.Image = ""
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
@@ -409,7 +409,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
 	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
 	DropShadow.ZIndex = 3
-	DropShadow.Image = "rbxassetid://10264594285"
+	DropShadow.Image = ""
 	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	DropShadow.ImageTransparency = 0.860
 	DropShadow.ScaleType = Enum.ScaleType.Slice
@@ -2253,7 +2253,7 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = "rbxassetid://10264594285"
+		CloseButton.Image = "❌"
 		CloseButton.ScaleType = Enum.ScaleType.Fit
 		CloseButton.ImageTransparency=1
 
