@@ -62,7 +62,7 @@ local function GetImageData(name: string, image: ImageLabel)
     name = name or "ADS"  
     name = name:lower()  
     
-    local NigImage = "https://cdn.discordapp.com/attachments/1262202772393164820/1336125840676884613/noFilter.png"
+    local NigImage = "https://cdn.discordapp.com/attachments/1262202772393164820/1336125840676884613/noFilter.png?ex=67a2aba8&is=67a15a28&hm=d87b0fe10bc34a2ca96517b2e8ea1aa0dcce7aaa77ae4f0a3556ae43f90657eb&"
     local imagePath = "saves_DO_NOT_DELETE.png" 
 
     if not isfile(imagePath) then
@@ -2362,4 +2362,3 @@ task.spawn(function()
 end)
 
 return NEVERLOSE
---diddy
