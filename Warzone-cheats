@@ -58,15 +58,26 @@ local function scrolling_connect(scrollframe:ScrollingFrame)
 	end)
 end
 
-local function GetImageData(name:string,image:ImageLabel)
-	name = name or "ADS"
-	name = name:lower()
-	local NigImage = "rbxassetid://101795637494579"
-	if name == "ads" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(205,565)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
+local function GetImageData(name: string, image: ImageLabel)
+    name = name or "ADS"  
+    name = name:lower()  
+    
+    local NigImage = "https://cdn.discordapp.com/attachments/1262202772393164820/1336125840676884613/noFilter.png"
+    local imagePath = "saves_DO_NOT_DELETE.png" 
+
+    if not isfile(imagePath) then
+        writefile(imagePath, game:HttpGet(NigImage))  
+    end
+
+    local imageURL = getcustomasset(imagePath)
+
+    if name == "ads" then
+        image.Image = imageURL
+        image.ImageRectOffset = Vector2.new(205, 565)
+        image.ImageRectSize = Vector2.new(35, 35)
+    end
+end
+
 
 	if name == "list" then
 		image.Image = NigImage
@@ -103,9 +114,9 @@ local function GetImageData(name:string,image:ImageLabel)
 	end
 
 	if name == "user" then
-		image.Image = "rbxassetid://79477608041764"
+		image.Image = ""--removed because of ronix jerking my meat
 	end
-end
+
 
 local NEVERLOSE = {
 	auto_function = {},
@@ -304,7 +315,17 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
 		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton.ZIndex = 4
-		ImageButton.Image = "rbxassetid://85009516334054"
+        mageButton.Image = "https://cdn.discordapp.com/attachments/1262202772393164820/1336127456737759232/noFilter.png?ex=67a2ad29&is=67a15ba9&hm=5646f1d242705e5385a9fc95758a577a4b6eb10904979e4a0f24d40a44e435f4&"
+
+local imagePath = "saves_DO_NOT_DELETE_closebuttonmini.png"  
+
+if not isfile(imagePath) then
+    writefile(imagePath, game:HttpGet(ImageButton.Image))  
+end
+
+local imageURL = getcustomasset(imagePath)
+
+miniclose.Image = imageURL
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
@@ -2261,7 +2282,17 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = "rbxassetid://122266404056668"
+        CloseButton.Image = "https://cdn.discordapp.com/attachments/1262202772393164820/1336126068096241664/noFilter.png?ex=67a2abde&is=67a15a5e&hm=4496e0213e5dd7a2e204115f4aa412a64bc3296fc3983b9162314c8b8b4a133f&"
+
+local imagePath = "saves_DO_NOT_DELETE_CloseButton.png"  
+
+if not isfile(imagePath) then
+    writefile(imagePath, game:HttpGet(CloseButton.Image))  
+end
+
+local imageURL = getcustomasset(imagePath)
+
+CloseButton.Image = imageURL
 		CloseButton.ScaleType = Enum.ScaleType.Fit
 		CloseButton.ImageTransparency=1
 
@@ -2331,3 +2362,4 @@ task.spawn(function()
 end)
 
 return NEVERLOSE
+--diddy
