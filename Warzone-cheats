@@ -1,13 +1,19 @@
 --[[	
-made by bdokkx no credits nigger
-]]
 
+	|	NEVERLOSE	UI	|
+	Fuck Synapse X
+		THIS UI MAKE BY CAT_SUS		
+		original Neverlose
+		
+		[https://neverlose.cc/] - csgo cheat
+]]
+local cloneref = cloneref or function(...) return ... end
 local LocalPlayer = game:GetService('Players').LocalPlayer;
-local Mouse = LocalPlayer:GetMouse();
+local Mouse = cloneref(LocalPlayer:GetMouse());
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
-local CoreGui = game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
+local CoreGui = (gethui and gethui()) or game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
 
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
@@ -58,55 +64,30 @@ local function scrolling_connect(scrollframe:ScrollingFrame)
 	end)
 end
 
-local function GetImageData(name:string,image:ImageLabel)
-	name = name or "ADS"
-	name = name:lower()
-	local NigImage = "rbxassetid://101795637494579"
-	if name == "ads" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(205,565)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
+local function GetImageData(name: string, image: ImageLabel)
+    name = name or "ADS"
+    name = name:lower()--idk why i labeled these
+    local NigImage1 = "rbxassetid://16898613353"  -- First image asset (1)
+    local NigImage2 = "rbxassetid://16898613613"  -- Second image asset (2)
+	local NigImage3 = "rbxassetid://16898613777"  -- Third image asset  (3)
+    if name == "party-popper" then
+        image.Image = NigImage2
+        image.ImageRectOffset = Vector2.new(918, 955)  
+        image.ImageRectSize = Vector2.new(48, 48)     
+    end
 
-	if name == "list" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(485,205)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "folder" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(805,45)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "earth" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(604,324)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "locked" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(524, 644)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "home" then
-		image.Image = NigImage
-		image.ImageRectOffset = Vector2.new(964, 205)
-		image.ImageRectSize = Vector2.new(35,35)
-	end
-
-	if name == "mouse" then
-		image.Image = ""
-	end
-
-	if name == "user" then
-		image.Image = "rbxassetid://79477608041764"
-	end
+    if name == "earth" then
+        image.Image = NigImage1
+        image.ImageRectOffset = Vector2.new(earth[3][1], earth[3][2])  
+        image.ImageRectSize = Vector2.new(earth[2][1], earth[2][2])  
+    end
 end
-
+if name == "settings" then
+    image.Image = NigImage3
+    image.ImageRectOffset = Vector2.new(771, 257)  
+    image.ImageRectSize = Vector2.new(48, 48)  
+end
+end
 local NEVERLOSE = {
 	auto_function = {},
 	Themes = {
@@ -120,12 +101,11 @@ local NEVERLOSE = {
 		StrokeColor = Color3.fromRGB(50, 50, 50),
 		ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	},
-	_Version = "100000A no fisch developers gonna be here",
-	_Name = "fisch developers you thought"
+	_Version="10.C",
+	_Name="NEVERLOSE"
 }
 
-print(NEVERLOSE._Name .. ":", NEVERLOSE._Version .. ":", [[Bdokkx: Fisch you will never find us]], ": UI BY bdokkx", "__ui")
-
+print(NEVERLOSE._Name..":",NEVERLOSE._Version..':',[[Inspired By: https://neverlose.cc/]],": UI BY 3345-C-A-T-S-U-S","__ui")
 
 function NEVERLOSE:Theme(name)
 	name = tostring(name or "original"):lower()
@@ -152,19 +132,6 @@ function NEVERLOSE:Theme(name)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(50, 50, 50)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	end
-
-	if name == "bdokkxcums" then
-		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(30, 30, 45) 
-		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(12, 12, 20) 
-		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(40, 40, 60) 
-		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(120, 180, 255)
-		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 180, 255) 
-		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(0, 90, 128) 
-		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(20, 20, 35) 
-		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(60, 60, 80) 
-		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(25, 25, 40) 
-	end
-	
 
 	if name == "dark" then
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(37, 37, 37)
@@ -304,7 +271,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
 		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton.ZIndex = 4
-		ImageButton.Image = "rbxassetid://85009516334054"
+		ImageButton.Image = "rbxassetid://10002398990"
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
@@ -417,7 +384,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
 	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
 	DropShadow.ZIndex = 3
-	DropShadow.Image = "rbxassetid://99499278559290"
+	DropShadow.Image = "rbxassetid://6014261993"
 	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	DropShadow.ImageTransparency = 0.860
 	DropShadow.ScaleType = Enum.ScaleType.Slice
@@ -2261,9 +2228,13 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = "rbxassetid://122266404056668"
-		CloseButton.ScaleType = Enum.ScaleType.Fit
-		CloseButton.ImageTransparency=1
+		
+		CloseButton.Text = "❌"  
+		CloseButton.TextColor3 = Color3.fromRGB(0, 0, 0)  
+		CloseButton.TextSize = 22  
+		CloseButton.TextTransparency = 0.5
+		CloseButton.TextButtonStyle = Enum.ButtonStyle.Normal 
+		
 
 		local currenttime = 0.3
 		local function start_vu()
