@@ -1,11 +1,5 @@
 --[[	
-
-	|	NEVERLOSE	UI	|
-	Fuck Synapse X
-		THIS UI MAKE BY CAT_SUS		
-		original Neverlose
-		
-		[https://neverlose.cc/] - csgo cheat
+made by bdokkx no credits nigger
 ]]
 
 local LocalPlayer = game:GetService('Players').LocalPlayer;
@@ -67,7 +61,7 @@ end
 local function GetImageData(name:string,image:ImageLabel)
 	name = name or "ADS"
 	name = name:lower()
-	local NigImage = "🌐"
+	local NigImage = "rbxassetid://101795637494579"
 	if name == "ads" then
 		image.Image = NigImage
 		image.ImageRectOffset = Vector2.new(205,565)
@@ -105,11 +99,11 @@ local function GetImageData(name:string,image:ImageLabel)
 	end
 
 	if name == "mouse" then
-		image.Image = "🌐"
+		image.Image = ""
 	end
 
 	if name == "user" then
-		image.Image = "🌐"
+		image.Image = "rbxassetid://79477608041764"
 	end
 end
 
@@ -126,11 +120,11 @@ local NEVERLOSE = {
 		StrokeColor = Color3.fromRGB(50, 50, 50),
 		ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	},
-	_Version="10.C",
-	_Name="NEVERLOSE"
+	_Version="100000A no fisch developers gonna be here",
+	_Name="fisch developers you thought"
 }
 
-print(NEVERLOSE._Name..":",NEVERLOSE._Version..':',[[Inspired By: https://neverlose.cc/]],": UI BY 3345-C-A-T-S-U-S","__ui")
+print(Unknown._Name..":",NEVERLOSE._Version..':',[[Bdokkx: Fisch you will never find us]],": UI BY bdokkx","__ui")
 
 function NEVERLOSE:Theme(name)
 	name = tostring(name or "original"):lower()
@@ -157,6 +151,19 @@ function NEVERLOSE:Theme(name)
 		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(50, 50, 50)
 		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	end
+
+	if name == "bdokkxcums" then
+		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(30, 30, 45) 
+		NEVERLOSE.Themes.BlackColor = Color3.fromRGB(12, 12, 20) 
+		NEVERLOSE.Themes.HeaderColor = Color3.fromRGB(40, 40, 60) 
+		NEVERLOSE.Themes.TraceColor = Color3.fromRGB(120, 180, 255)
+		NEVERLOSE.Themes.MainColor = Color3.fromRGB(0, 180, 255) 
+		NEVERLOSE.Themes.MainColorDrop = Color3.fromRGB(0, 90, 128) 
+		NEVERLOSE.Themes.SectionColor = Color3.fromRGB(20, 20, 35) 
+		NEVERLOSE.Themes.StrokeColor = Color3.fromRGB(60, 60, 80) 
+		NEVERLOSE.Themes.ButtonBlackgroundColor = Color3.fromRGB(25, 25, 40) 
+	end
+	
 
 	if name == "dark" then
 		NEVERLOSE.Themes.BlackgroundColor = Color3.fromRGB(37, 37, 37)
@@ -296,7 +303,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
 		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton.ZIndex = 4
-		ImageButton.Image = ""
+		ImageButton.Image = "rbxassetid://85009516334054"
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
@@ -409,7 +416,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
 	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
 	DropShadow.ZIndex = 3
-	DropShadow.Image = ""
+	DropShadow.Image = "rbxassetid://99499278559290"
 	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	DropShadow.ImageTransparency = 0.860
 	DropShadow.ScaleType = Enum.ScaleType.Slice
@@ -2253,7 +2260,7 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = "rbxassetid://9127564477"
+		CloseButton.Image = "rbxassetid://122266404056668"
 		CloseButton.ScaleType = Enum.ScaleType.Fit
 		CloseButton.ImageTransparency=1
 
