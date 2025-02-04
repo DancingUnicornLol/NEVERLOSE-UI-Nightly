@@ -120,11 +120,12 @@ local NEVERLOSE = {
 		StrokeColor = Color3.fromRGB(50, 50, 50),
 		ButtonBlackgroundColor = Color3.fromRGB(26, 26, 26)
 	},
-	_Version="100000A no fisch developers gonna be here",
-	_Name="fisch developers you thought"
+	_Version = "100000A no fisch developers gonna be here",
+	_Name = "fisch developers you thought"
 }
 
-print(Unknown._Name..":",NEVERLOSE._Version..':',[[Bdokkx: Fisch you will never find us]],": UI BY bdokkx","__ui")
+print(NEVERLOSE._Name .. ":", NEVERLOSE._Version .. ":", [[Bdokkx: Fisch you will never find us]], ": UI BY bdokkx", "__ui")
+
 
 function NEVERLOSE:Theme(name)
 	name = tostring(name or "original"):lower()
