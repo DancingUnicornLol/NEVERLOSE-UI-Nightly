@@ -67,7 +67,7 @@ end
 local function GetImageData(name:string,image:ImageLabel)
 	name = name or "ADS"
 	name = name:lower()
-	local NigImage = "🌐"
+	local NigImage = "rbxassetid://3926305904"
 	if name == "ads" then
 		image.Image = NigImage
 		image.ImageRectOffset = Vector2.new(205,565)
@@ -105,11 +105,23 @@ local function GetImageData(name:string,image:ImageLabel)
 	end
 
 	if name == "mouse" then
-		image.Image = "🌐"
+		image.Image = "rbxassetid://3515393063"
+	end
+
+    if name == "esp" then
+		image.Image = "rbxassetid://6031075931"
+	end
+
+    if name == "auto" then
+		image.Image = "rbxassetid://602356590"
+	end
+
+    if name == "settings" then
+		image.Image = "rbxassetid://6031280882"
 	end
 
 	if name == "user" then
-		image.Image = "🌐"
+		image.Image = "rbxassetid://6034287594"
 	end
 end
 
@@ -130,7 +142,7 @@ local NEVERLOSE = {
 	_Name="NEVERLOSE"
 }
 
-print(NEVERLOSE._Name..":",NEVERLOSE._Version..':',[[Inspired By: https://neverlose.cc/]],": UI BY 3345-C-A-T-S-U-S","__ui")
+print(NEVERLOSE._Name..":",NEVERLOSE._Version..':',[[https://neverlose.cc/]],": UI BY OWNER BEDOL HUB","__ui")
 
 function NEVERLOSE:Theme(name)
 	name = tostring(name or "original"):lower()
@@ -202,14 +214,14 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	local UserName = Instance.new("TextLabel")
 	local headd2text
 	local oldPositionClose
-
+	
 	--Anti Spoofer
 	ScreenGui:GetPropertyChangedSignal('Enabled'):Connect(function()
 		if not ScreenGui.Enabled then
 			ScreenGui.Enabled=true
 		end
 	end)
-
+	
 	task.spawn(function()
 		if Text then
 			local TextLabel = Instance.new("TextLabel")
@@ -296,7 +308,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 		ImageButton.Size = UDim2.new(0.0900000036, 0, 0.0900000036, 0)
 		ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		ImageButton.ZIndex = 4
-		ImageButton.Image = ""
+		ImageButton.Image = "rbxassetid://10002398990"
 		ImageButton.ScaleType = Enum.ScaleType.Fit
 
 		ImageButton.MouseButton1Click:Connect(function()
@@ -409,7 +421,7 @@ function NEVERLOSE:AddWindow(NameScriptHub,Text,UICustomSize)
 	DropShadow.Position = UDim2.new(0.963742971, 0, 0.5, 0)
 	DropShadow.Size = UDim2.new(-0.0510042384, 47, 0.839458942, 47)
 	DropShadow.ZIndex = 3
-	DropShadow.Image = ""
+	DropShadow.Image = "rbxassetid://6014261993"
 	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
 	DropShadow.ImageTransparency = 0.860
 	DropShadow.ScaleType = Enum.ScaleType.Slice
@@ -2253,10 +2265,10 @@ function NEVERLOSE:Notification()
 		CloseButton.Size = UDim2.new(0.550000012, 0, 0.550000012, 0)
 		CloseButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
 		CloseButton.ZIndex = 5
-		CloseButton.Image = "❌"
+		CloseButton.Image = "rbxassetid://9127564477"
 		CloseButton.ScaleType = Enum.ScaleType.Fit
 		CloseButton.ImageTransparency=1
-
+		
 		local currenttime = 0.3
 		local function start_vu()
 			TweenService:Create(Notify,TweenInfo.new(currenttime/2,Enum.EasingStyle.Quint),{Size=UDim2.new(0.99,0,0.75,0)}):Play()
